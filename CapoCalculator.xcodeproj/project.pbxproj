@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3105C0F1C32409700F306EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3105C0E1C32409700F306EF /* SettingsViewController.swift */; };
+		A33D0AD81C08F5DC00D89BE0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AD71C08F5DC00D89BE0 /* Key.swift */; };
+		A33D0AD91C08F5DC00D89BE0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AD71C08F5DC00D89BE0 /* Key.swift */; };
+		A33D0AE21C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */; };
+		A33D0AE31C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */; };
+		A33D0AE51C090B9500D89BE0 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */; };
+		A33D0AE61C090B9500D89BE0 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */; };
+		A33D0AE81C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
+		A33D0AE91C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
+		A3F1A3F11C08EAA900125A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */; };
+		A3F1A3F31C08EAA900125A4A /* CapoOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */; };
+		A3F1A3F61C08EAA900125A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F41C08EAA900125A4A /* Main.storyboard */; };
+		A3F1A3F81C08EAA900125A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F71C08EAA900125A4A /* Assets.xcassets */; };
+		A3F1A3FB1C08EAA900125A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F91C08EAA900125A4A /* LaunchScreen.storyboard */; };
+		A3F1A4061C08EAA900125A4A /* CapoCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A4051C08EAA900125A4A /* CapoCalculatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3F1A4021C08EAA900125A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3F1A3E51C08EAA900125A4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3F1A3EC1C08EAA900125A4A;
+			remoteInfo = CapoCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A3105C0E1C32409700F306EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A33D0AD71C08F5DC00D89BE0 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoCalculatorAPI.swift; sourceTree = "<group>"; };
+		A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoKeyResult.swift; sourceTree = "<group>"; };
+		A3F1A3ED1C08EAA900125A4A /* CapoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapoCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapoOptionsViewController.swift; sourceTree = "<group>"; };
+		A3F1A3F51C08EAA900125A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3F1A3F71C08EAA900125A4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3F1A3FA1C08EAA900125A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A3F1A3FC1C08EAA900125A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3F1A4011C08EAA900125A4A /* CapoCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapoCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F1A4051C08EAA900125A4A /* CapoCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapoCalculatorTests.swift; sourceTree = "<group>"; };
+		A3F1A4071C08EAA900125A4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3F1A3EA1C08EAA900125A4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F1A3FE1C08EAA900125A4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A33D0ADA1C0906A500D89BE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A33D0AD71C08F5DC00D89BE0 /* Key.swift */,
+				A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A33D0ADB1C0906A900D89BE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A33D0ADC1C0906AE00D89BE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A3105C0E1C32409700F306EF /* SettingsViewController.swift */,
+				A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A33D0AE01C090A9A00D89BE0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */,
+				A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		A3F1A3E41C08EAA900125A4A = {
+			isa = PBXGroup;
+			children = (
+				A3F1A3EF1C08EAA900125A4A /* CapoCalculator */,
+				A3F1A4041C08EAA900125A4A /* CapoCalculatorTests */,
+				A3F1A3EE1C08EAA900125A4A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3F1A3EE1C08EAA900125A4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3F1A3ED1C08EAA900125A4A /* CapoCalculator.app */,
+				A3F1A4011C08EAA900125A4A /* CapoCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3F1A3EF1C08EAA900125A4A /* CapoCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A33D0AE01C090A9A00D89BE0 /* API */,
+				A33D0ADC1C0906AE00D89BE0 /* Controller */,
+				A33D0ADB1C0906A900D89BE0 /* View */,
+				A33D0ADA1C0906A500D89BE0 /* Model */,
+				A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */,
+				A3F1A3F41C08EAA900125A4A /* Main.storyboard */,
+				A3F1A3F71C08EAA900125A4A /* Assets.xcassets */,
+				A3F1A3F91C08EAA900125A4A /* LaunchScreen.storyboard */,
+				A3F1A3FC1C08EAA900125A4A /* Info.plist */,
+			);
+			path = CapoCalculator;
+			sourceTree = "<group>";
+		};
+		A3F1A4041C08EAA900125A4A /* CapoCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A3F1A4051C08EAA900125A4A /* CapoCalculatorTests.swift */,
+				A3F1A4071C08EAA900125A4A /* Info.plist */,
+			);
+			path = CapoCalculatorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3F1A3EC1C08EAA900125A4A /* CapoCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3F1A40A1C08EAA900125A4A /* Build configuration list for PBXNativeTarget "CapoCalculator" */;
+			buildPhases = (
+				A3F1A3E91C08EAA900125A4A /* Sources */,
+				A3F1A3EA1C08EAA900125A4A /* Frameworks */,
+				A3F1A3EB1C08EAA900125A4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapoCalculator;
+			productName = CapoCalculator;
+			productReference = A3F1A3ED1C08EAA900125A4A /* CapoCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A3F1A4001C08EAA900125A4A /* CapoCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3F1A40D1C08EAA900125A4A /* Build configuration list for PBXNativeTarget "CapoCalculatorTests" */;
+			buildPhases = (
+				A3F1A3FD1C08EAA900125A4A /* Sources */,
+				A3F1A3FE1C08EAA900125A4A /* Frameworks */,
+				A3F1A3FF1C08EAA900125A4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A3F1A4031C08EAA900125A4A /* PBXTargetDependency */,
+			);
+			name = CapoCalculatorTests;
+			productName = CapoCalculatorTests;
+			productReference = A3F1A4011C08EAA900125A4A /* CapoCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3F1A3E51C08EAA900125A4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Yellow Ladder Productions";
+				TargetAttributes = {
+					A3F1A3EC1C08EAA900125A4A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					A3F1A4001C08EAA900125A4A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = A3F1A3EC1C08EAA900125A4A;
+					};
+				};
+			};
+			buildConfigurationList = A3F1A3E81C08EAA900125A4A /* Build configuration list for PBXProject "CapoCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3F1A3E41C08EAA900125A4A;
+			productRefGroup = A3F1A3EE1C08EAA900125A4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3F1A3EC1C08EAA900125A4A /* CapoCalculator */,
+				A3F1A4001C08EAA900125A4A /* CapoCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3F1A3EB1C08EAA900125A4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3F1A3FB1C08EAA900125A4A /* LaunchScreen.storyboard in Resources */,
+				A3F1A3F81C08EAA900125A4A /* Assets.xcassets in Resources */,
+				A3F1A3F61C08EAA900125A4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F1A3FF1C08EAA900125A4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3F1A3E91C08EAA900125A4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3F1A3F31C08EAA900125A4A /* CapoOptionsViewController.swift in Sources */,
+				A33D0AE81C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */,
+				A3105C0F1C32409700F306EF /* SettingsViewController.swift in Sources */,
+				A33D0AE51C090B9500D89BE0 /* PersistencyManager.swift in Sources */,
+				A3F1A3F11C08EAA900125A4A /* AppDelegate.swift in Sources */,
+				A33D0AE21C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */,
+				A33D0AD81C08F5DC00D89BE0 /* Key.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3F1A3FD1C08EAA900125A4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A33D0AE61C090B9500D89BE0 /* PersistencyManager.swift in Sources */,
+				A33D0AE91C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */,
+				A3F1A4061C08EAA900125A4A /* CapoCalculatorTests.swift in Sources */,
+				A33D0AE31C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */,
+				A33D0AD91C08F5DC00D89BE0 /* Key.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A3F1A4031C08EAA900125A4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3F1A3EC1C08EAA900125A4A /* CapoCalculator */;
+			targetProxy = A3F1A4021C08EAA900125A4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A3F1A3F41C08EAA900125A4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F1A3F51C08EAA900125A4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A3F1A3F91C08EAA900125A4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3F1A3FA1C08EAA900125A4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3F1A4081C08EAA900125A4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A3F1A4091C08EAA900125A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A3F1A40B1C08EAA900125A4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CapoCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowladder.CapoCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3F1A40C1C08EAA900125A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CapoCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowladder.CapoCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A3F1A40E1C08EAA900125A4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CapoCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowladder.CapoCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapoCalculator.app/CapoCalculator";
+			};
+			name = Debug;
+		};
+		A3F1A40F1C08EAA900125A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CapoCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yellowladder.CapoCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapoCalculator.app/CapoCalculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3F1A3E81C08EAA900125A4A /* Build configuration list for PBXProject "CapoCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3F1A4081C08EAA900125A4A /* Debug */,
+				A3F1A4091C08EAA900125A4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3F1A40A1C08EAA900125A4A /* Build configuration list for PBXNativeTarget "CapoCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3F1A40B1C08EAA900125A4A /* Debug */,
+				A3F1A40C1C08EAA900125A4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3F1A40D1C08EAA900125A4A /* Build configuration list for PBXNativeTarget "CapoCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3F1A40E1C08EAA900125A4A /* Debug */,
+				A3F1A40F1C08EAA900125A4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3F1A3E51C08EAA900125A4A /* Project object */;
+}
