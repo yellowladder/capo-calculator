@@ -58,13 +58,11 @@ class SettingsViewController: UITableViewController {
         case false:
             CapoCalculatorAPI.sharedInstance.makeKeyInvalid(keyVal)
         }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("update", object: nil)
     }
     
-    func addSwitchHandlers() {
-        for mySwitch in validKeySwitchCollection {
-            mySwitch.addTarget(self, action: Selector("validKeySwitchStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        }
-    }
+
     
     // MARK: Lifecycle
     
@@ -83,7 +81,11 @@ class SettingsViewController: UITableViewController {
     
     // MARK: Delegates and DataSource
     
-    
+    func addSwitchHandlers() {
+        for mySwitch in validKeySwitchCollection {
+            mySwitch.addTarget(self, action: Selector("validKeySwitchStateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        }
+    }
     
 }
 

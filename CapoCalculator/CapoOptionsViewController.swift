@@ -88,6 +88,12 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
         concertKeyPicker.delegate = self
         concertKeyPicker.dataSource = self
         concertKeyPicker.selectRow(2, inComponent: pickerComponent.name.rawValue, animated: false)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateResults:",name:"update", object: nil)
+        getSelectionAndDisplayResults()
+    }
+    
+    func updateResults(notification: NSNotification){
+        //load data here
         getSelectionAndDisplayResults()
     }
 
