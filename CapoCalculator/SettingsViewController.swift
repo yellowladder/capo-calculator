@@ -12,6 +12,9 @@ class SettingsViewController: UITableViewController {
     
     // MARK: Outlets and Properties
     
+    @IBOutlet weak var tuningLabel: UILabel!
+    @IBOutlet weak var tuningStepper: UIStepper!
+    
     
     @IBOutlet weak var validKeyC: UISwitch!
     @IBOutlet weak var validKeyCSh: UISwitch!
@@ -59,10 +62,44 @@ class SettingsViewController: UITableViewController {
             CapoCalculatorAPI.sharedInstance.makeKeyInvalid(keyVal)
         }
         
-        NSNotificationCenter.defaultCenter().postNotificationName("update", object: nil)
+        sendUpdateNotification()
     }
     
-
+    func setTuningFromSavedDefaults() {
+        let tuning = CapoCalculatorAPI.sharedInstance.getTuning()
+        setTuningInUI(tuning)
+    }
+    
+    func setTuningInUI(tuning: Int) {
+        var tuningStr = String()
+        switch tuning {
+        case 0:
+            tuningStr = "Std"
+        case 1:
+            tuningStr = "+1"
+        case 2:
+            tuningStr = "+2"
+        case -1:
+            tuningStr = "-1"
+        case -2:
+            tuningStr = "-2"
+        default:
+            tuningStr = "Invalid"
+        }
+        tuningLabel.text = tuningStr
+        tuningStepper.value = Double(tuning)
+    }
+    
+    func stepperValueDidChange(stepper: UIStepper) {
+        let newTuningVal = Int(stepper.value)
+        CapoCalculatorAPI.sharedInstance.updateTuning(newTuningVal)
+        setTuningInUI(newTuningVal)
+        sendUpdateNotification()
+    }
+    
+    func sendUpdateNotification() {
+        NSNotificationCenter.defaultCenter().postNotificationName("update", object: nil)
+    }
     
     // MARK: Lifecycle
     
@@ -71,6 +108,9 @@ class SettingsViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         setValidKeysFromSavedDefaults()
         addSwitchHandlers()
+        setTuningFromSavedDefaults()
+        addStepperHandler()
+
     }
     
     //override func didReceiveMemoryWarning() {
@@ -80,6 +120,10 @@ class SettingsViewController: UITableViewController {
     
     
     // MARK: Delegates and DataSource
+    
+    func addStepperHandler() {
+        tuningStepper.addTarget(self, action: "stepperValueDidChange:", forControlEvents: .ValueChanged)
+    }
     
     func addSwitchHandlers() {
         for mySwitch in validKeySwitchCollection {

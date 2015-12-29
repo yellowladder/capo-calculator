@@ -75,4 +75,20 @@ class CapoCalculatorTests: XCTestCase {
         let expectedKeyName = "E"
         XCTAssert(foundKey.keyName == expectedKeyName)
     }
+    
+    func testApiDefaultTuning() {
+        CapoCalculatorAPI.sharedInstance.resetDefaultTuning()
+        let foundTuning = CapoCalculatorAPI.sharedInstance.getTuning()
+        let expectedTuning = 0
+        XCTAssert(foundTuning == expectedTuning)
+    }
+    
+    func testApiChangeTuning() {
+        CapoCalculatorAPI.sharedInstance.resetDefaultTuning()
+        let intendedTuning = 2
+        CapoCalculatorAPI.sharedInstance.updateTuning(intendedTuning)
+        let foundTuning = CapoCalculatorAPI.sharedInstance.getTuning()
+        let expectedTuning = 2
+        XCTAssert(foundTuning == expectedTuning)
+    }
 }

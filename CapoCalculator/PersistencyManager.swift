@@ -13,13 +13,20 @@ class PersistencyManager: NSObject {
     let keyListKeyConstant = "keyListKey"
     private var keys = [Key]()
     
+    let tuningKeyConstant = "tuningKey"
+    private var tuning = Int()
+    
     override init() {
         super.init()
         retrieveKeys()
         if keys.count == 0 {
             resetDefaultKeys()
         }
+        retrieveTuning()
     }
+    
+    
+    // MARK: Keys 
     
     private func getDefaultKeys() -> [Key] {
         var defaultKeys = [Key]()
@@ -45,6 +52,7 @@ class PersistencyManager: NSObject {
         NSKeyedArchiver.setClassName("Key", forClass: Key.self)
         let data = NSKeyedArchiver.archivedDataWithRootObject(keys)
         defaults.setObject(data, forKey: keyListKeyConstant)
+        defaults.synchronize()
         
     }
     
@@ -59,6 +67,7 @@ class PersistencyManager: NSObject {
     func removePersistedKeys() {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.removeObjectForKey(keyListKeyConstant)
+        defaults.synchronize()
     }
     
     func resetDefaultKeys() {
@@ -81,4 +90,53 @@ class PersistencyManager: NSObject {
         keys[idx] = Key(name: updatedKey.keyName, value: updatedKey.keyVal, isValidOpenKey: isValid)
         persistKeys()
     }
+    
+    
+    // MARK: Tuning 
+    
+    private func getDefaultTuning() -> Int {
+        return 0
+    }
+    
+    private func persistTuning() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(tuning, forKey: tuningKeyConstant)
+        defaults.synchronize()
+    }
+    
+    private func retrieveTuning() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        tuning = defaults.integerForKey(tuningKeyConstant)
+    }
+    
+    func removePersistedTuning() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey(tuningKeyConstant)
+        defaults.synchronize()
+    }
+    
+    func resetDefaultTuning() {
+        tuning = getDefaultTuning()
+        persistTuning()
+    }
+    
+    func getTuning() -> Int {
+        return tuning
+    }
+    
+    func updateTuning(updatedTuning: Int) {
+        tuning = updatedTuning
+        persistTuning()
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

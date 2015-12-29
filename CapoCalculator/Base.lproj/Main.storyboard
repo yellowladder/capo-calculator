@@ -26,12 +26,18 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aps-0C-DUt">
                                 <rect key="frame" x="20" y="49" width="320" height="216"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Options:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4m-Hl-IDt">
-                                <rect key="frame" x="20" y="240" width="365" height="352"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuning:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiv-jT-ZEH">
+                                <rect key="frame" x="20" y="283" width="170" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" fixedFrame="YES" editable="NO" text="Available Options:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bGG-Bs-ih4">
+                                <rect key="frame" x="15" y="312" width="336" height="287"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -39,9 +45,10 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="availOptionsLabel" destination="a4m-Hl-IDt" id="SBH-Kc-6NB"/>
+                        <outlet property="availOptionsText" destination="bGG-Bs-ih4" id="4J2-WS-qAo"/>
                         <outlet property="concertKeyPickedText" destination="oIJ-wG-PHN" id="kYu-La-Dqq"/>
                         <outlet property="concertKeyPicker" destination="Aps-0C-DUt" id="nhH-tC-Za8"/>
+                        <outlet property="tuningLabel" destination="hiv-jT-ZEH" id="Xq3-il-6ea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,6 +103,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWF-dJ-ilf" id="Cmy-Oq-Bul">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-2" maximumValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="KRo-GL-Hgx">
+                                                    <rect key="frame" x="107" y="6" width="94" height="29"/>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdF-t9-Jam">
+                                                    <rect key="frame" x="19" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -280,6 +298,8 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="TTk-j4-ZS6"/>
                     <connections>
+                        <outlet property="tuningLabel" destination="PdF-t9-Jam" id="dLP-oe-ZmJ"/>
+                        <outlet property="tuningStepper" destination="KRo-GL-Hgx" id="4CJ-8U-wxe"/>
                         <outlet property="validKeyA" destination="f3V-5c-kt9" id="rGA-gC-lWt"/>
                         <outlet property="validKeyASh" destination="USB-FU-TAb" id="1Py-Ac-rmm"/>
                         <outlet property="validKeyB" destination="xcO-yQ-zhx" id="j0z-Lj-Gm0"/>

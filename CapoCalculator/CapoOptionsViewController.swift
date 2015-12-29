@@ -13,10 +13,9 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
     // MARK: Outlets and Properties
     
     @IBOutlet weak var concertKeyPickedText: UILabel!
-    
     @IBOutlet weak var concertKeyPicker: UIPickerView!
-    
-    @IBOutlet weak var availOptionsLabel: UILabel!
+    @IBOutlet weak var tuningLabel: UILabel!
+    @IBOutlet weak var availOptionsText: UITextView!
     
     let pickerData = [
         CapoCalculatorAPI.sharedInstance.getAllKeyNames()
@@ -62,13 +61,13 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func displayResults(resultsArr: [String]) {
-        availOptionsLabel.text?.removeAll()
         var strBuild = String()
         strBuild = "Available Options:\n"
         for result in resultsArr {
             strBuild.appendContentsOf(result)
         }
-        availOptionsLabel.text?.appendContentsOf(strBuild)
+        availOptionsText.text.removeAll()
+        availOptionsText.text.appendContentsOf(strBuild)
     }
     
     func getSelectionAndDisplayResults() {
@@ -76,9 +75,33 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
         updatePickedText()
         let resultsArr = getResults()
         displayResults(resultsArr)
-        
     }
 
+    // TODO: eliminate redundancy with Settings
+    func setTuningFromSavedDefaults() {
+        let tuning = CapoCalculatorAPI.sharedInstance.getTuning()
+        setTuningInUI(tuning)
+    }
+    
+    // TODO: eliminate redundancy with Settings
+    func setTuningInUI(tuning: Int) {
+        var tuningStr = String()
+        switch tuning {
+        case 0:
+            tuningStr = "Std"
+        case 1:
+            tuningStr = "+1"
+        case 2:
+            tuningStr = "+2"
+        case -1:
+            tuningStr = "-1"
+        case -2:
+            tuningStr = "-2"
+        default:
+            tuningStr = "Invalid"
+        }
+        tuningLabel.text = "Tuning: " + tuningStr
+    }
     
     // MARK: Lifecycle
     
@@ -89,11 +112,13 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
         concertKeyPicker.dataSource = self
         concertKeyPicker.selectRow(2, inComponent: pickerComponent.name.rawValue, animated: false)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateResults:",name:"update", object: nil)
+        
+        setTuningFromSavedDefaults()
         getSelectionAndDisplayResults()
     }
     
     func updateResults(notification: NSNotification){
-        //load data here
+        setTuningFromSavedDefaults()
         getSelectionAndDisplayResults()
     }
 
@@ -121,7 +146,6 @@ class CapoOptionsViewController: UIViewController, UIPickerViewDataSource, UIPic
         return pickerData.count
     }
     
-
     
 }
 

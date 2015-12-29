@@ -19,6 +19,7 @@ class CapoCalculatorAPI: NSObject {
         super.init()
     }
     
+    // MARK: Keys 
     
     func getAllKeys() -> [Key] {
         return persistencyManager.getAllKeys()
@@ -48,9 +49,10 @@ class CapoCalculatorAPI: NSObject {
     }
 
     func getOpenKeyValuePairs(concertKey: Key) -> [CapoKeyResult] {
+        let tuning = getTuning()
         var capoKeys = [CapoKeyResult]()
         for key in getValidOpenKeys() {
-            capoKeys.append(CapoKeyResult(openKeyName: key.keyName, capoPosition: key.availableCapoKey(concertKey.keyVal)))
+            capoKeys.append(CapoKeyResult(openKeyName: key.keyName, capoPosition: key.availableCapoKey(concertKey.keyVal, tuning: tuning)))
         }
         return capoKeys
     }
@@ -79,5 +81,19 @@ class CapoCalculatorAPI: NSObject {
 
     func resetDefaultKeys() {
         persistencyManager.resetDefaultKeys()
+    }
+    
+    // MARK: Tuning
+    
+    func resetDefaultTuning() {
+        persistencyManager.resetDefaultTuning()
+    }
+    
+    func getTuning() -> Int {
+        return persistencyManager.getTuning()
+    }
+    
+    func updateTuning(updatedTuning: Int) {
+        persistencyManager.updateTuning(updatedTuning)
     }
 }

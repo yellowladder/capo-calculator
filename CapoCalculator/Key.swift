@@ -35,8 +35,10 @@ class Key : NSObject, NSCoding {
         aCoder.encodeBool(keyOpenValid, forKey: "keyOpenValid")
     }
     
-    func availableCapoKey(let concertKeyVal: Int) -> Int {
-        let intermedVal = concertKeyVal - keyVal
+    func availableCapoKey(let concertKeyVal: Int, tuning: Int) -> Int {
+        //main logic for determining valid capo positions
+        
+        let intermedVal = (concertKeyVal - keyVal) - tuning
         if (intermedVal >= 0) {
             return intermedVal
         }
