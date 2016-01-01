@@ -21,6 +21,10 @@ class CapoCalculatorAPI: NSObject {
     
     // MARK: Keys 
     
+    func getDefaultKeyVal() -> Int {
+        return 2 // D
+    }
+    
     func getAllKeys() -> [Key] {
         return persistencyManager.getAllKeys()
     }

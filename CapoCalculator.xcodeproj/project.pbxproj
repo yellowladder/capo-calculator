@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3105C0F1C32409700F306EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3105C0E1C32409700F306EF /* SettingsViewController.swift */; };
+		A31ACF801C35C6C6009F685B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ACF7F1C35C6C6009F685B /* DetailViewController.swift */; };
 		A33D0AD81C08F5DC00D89BE0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AD71C08F5DC00D89BE0 /* Key.swift */; };
 		A33D0AD91C08F5DC00D89BE0 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AD71C08F5DC00D89BE0 /* Key.swift */; };
 		A33D0AE21C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */; };
@@ -17,7 +18,7 @@
 		A33D0AE81C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
 		A33D0AE91C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
 		A3F1A3F11C08EAA900125A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */; };
-		A3F1A3F31C08EAA900125A4A /* CapoOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */; };
+		A3F1A3F31C08EAA900125A4A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F21C08EAA900125A4A /* MasterViewController.swift */; };
 		A3F1A3F61C08EAA900125A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F41C08EAA900125A4A /* Main.storyboard */; };
 		A3F1A3F81C08EAA900125A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F71C08EAA900125A4A /* Assets.xcassets */; };
 		A3F1A3FB1C08EAA900125A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F91C08EAA900125A4A /* LaunchScreen.storyboard */; };
@@ -36,13 +37,14 @@
 
 /* Begin PBXFileReference section */
 		A3105C0E1C32409700F306EF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A31ACF7F1C35C6C6009F685B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A33D0AD71C08F5DC00D89BE0 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoCalculatorAPI.swift; sourceTree = "<group>"; };
 		A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoKeyResult.swift; sourceTree = "<group>"; };
 		A3F1A3ED1C08EAA900125A4A /* CapoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapoCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapoOptionsViewController.swift; sourceTree = "<group>"; };
+		A3F1A3F21C08EAA900125A4A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A3F1A3F51C08EAA900125A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3F1A3F71C08EAA900125A4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3F1A3FA1C08EAA900125A4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				A3105C0E1C32409700F306EF /* SettingsViewController.swift */,
-				A3F1A3F21C08EAA900125A4A /* CapoOptionsViewController.swift */,
+				A3F1A3F21C08EAA900125A4A /* MasterViewController.swift */,
+				A31ACF7F1C35C6C6009F685B /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -248,7 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F1A3F31C08EAA900125A4A /* CapoOptionsViewController.swift in Sources */,
+				A3F1A3F31C08EAA900125A4A /* MasterViewController.swift in Sources */,
+				A31ACF801C35C6C6009F685B /* DetailViewController.swift in Sources */,
 				A33D0AE81C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */,
 				A3105C0F1C32409700F306EF /* SettingsViewController.swift in Sources */,
 				A33D0AE51C090B9500D89BE0 /* PersistencyManager.swift in Sources */,
