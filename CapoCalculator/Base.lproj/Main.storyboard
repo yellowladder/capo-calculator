@@ -28,7 +28,6 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="availOptionsText" destination="bGG-Bs-ih4" id="4J2-WS-qAo"/>
                         <outlet property="concertKeyPicker" destination="Aps-0C-DUt" id="nhH-tC-Za8"/>
                     </connections>
                 </viewController>
@@ -78,18 +77,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" fixedFrame="YES" editable="NO" text="Available Options:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bGG-Bs-ih4">
-                                <rect key="frame" x="20" y="190" width="336" height="220"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxN-BD-Y8k">
+                                <rect key="frame" x="20" y="72" width="339" height="226"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Capo Options" id="gJm-fr-eiD"/>
                     <connections>
-                        <outlet property="availOptionsText" destination="bGG-Bs-ih4" id="eSr-dc-FR7"/>
+                        <outlet property="capoKeyPicker" destination="cxN-BD-Y8k" id="ugn-Ik-7Pr"/>
                         <outlet property="concertKeyPickedText" destination="8wP-jE-p1Y" id="OsG-YU-qea"/>
                         <outlet property="tuningLabel" destination="KP0-uA-cOM" id="OMz-40-IF3"/>
                     </connections>

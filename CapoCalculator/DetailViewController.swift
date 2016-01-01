@@ -8,17 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
-    
-    // , UIPickerViewDataSource, UIPickerViewDelegate {
+class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
 // MARK: Outlets and Properties
 
     @IBOutlet weak var concertKeyPickedText: UILabel!
     @IBOutlet weak var tuningLabel: UILabel!
-    @IBOutlet weak var availOptionsText: UITextView!
     
+    @IBOutlet weak var capoKeyPicker: UIPickerView!
     
     
     enum pickerComponent:Int{
@@ -27,7 +24,7 @@ class DetailViewController: UIViewController {
     
     var pickedConcertKey = Key()
     
-    
+    var pickerData = [[String]]()
     
 // MARK: Instance Methods
 
@@ -73,7 +70,7 @@ class DetailViewController: UIViewController {
         tuningLabel.text = "Tuning: " + tuningStr
     }
 
-    func getResults() -> [String] {
+    func getCapoKeyResults() -> [String] {
         var capoKeys = CapoCalculatorAPI.sharedInstance.getOpenKeyValuePairs(pickedConcertKey)
         capoKeys.sortInPlace({ $0.capoPosition < $1.capoPosition})
         var resultsArr = [String]()
@@ -91,17 +88,13 @@ class DetailViewController: UIViewController {
     }
     
     func displayResults(resultsArr: [String]) {
-        var strBuild = String()
-        strBuild = "Available Options:\n"
-        for result in resultsArr {
-            strBuild.appendContentsOf(result)
-        }
-        availOptionsText.text.removeAll()
-        availOptionsText.text.appendContentsOf(strBuild)
+        pickerData = [resultsArr]
+        capoKeyPicker.selectRow(0, inComponent: pickerComponent.name.rawValue, animated: false)
+        capoKeyPicker.reloadAllComponents()
     }
     
     func getAndDisplayResults() {
-        let resultsArr = getResults()
+        let resultsArr = getCapoKeyResults()
         displayResults(resultsArr)
     }
     
@@ -116,7 +109,9 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateResults:",name:"update", object: nil)
-        
+        capoKeyPicker.delegate = self
+        capoKeyPicker.dataSource = self
+
         setTuningFromSavedDefaults()
         setPickedConcertKeyFromDefaults()
         getAndDisplayResults()
@@ -127,6 +122,22 @@ class DetailViewController: UIViewController {
     
 // MARK: Delegates and DataSource
 
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[component][row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return pickerData.count
+    }
 
 }
 
