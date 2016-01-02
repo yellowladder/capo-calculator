@@ -12,11 +12,10 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
 // MARK: Outlets and Properties
 
-    @IBOutlet weak var concertKeyPickedText: UILabel!
+    @IBOutlet weak var concertKeyLabel: UILabel!
     @IBOutlet weak var tuningLabel: UILabel!
-    
     @IBOutlet weak var capoKeyPicker: UIPickerView!
-    
+    @IBOutlet weak var transpositionTextView: UITextView!
     
     enum pickerComponent:Int{
         case name = 0
@@ -35,7 +34,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func updatePickedText() {
-        concertKeyPickedText.text = "Concert Key: " + pickedConcertKey.keyName
+        concertKeyLabel.text = "Concert Key: " + pickedConcertKey.keyName
     }
     
     func setPickedConcertKeyFromDefaults() {
@@ -87,15 +86,15 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         return resultsArr
     }
     
-    func displayResults(resultsArr: [String]) {
-        pickerData = [resultsArr]
+    func updateCapoKeyPicker(capoKeysArr: [String]) {
+        pickerData = [capoKeysArr]
         capoKeyPicker.selectRow(0, inComponent: pickerComponent.name.rawValue, animated: false)
         capoKeyPicker.reloadAllComponents()
     }
     
     func getAndDisplayResults() {
-        let resultsArr = getCapoKeyResults()
-        displayResults(resultsArr)
+        let capoKeysArr = getCapoKeyResults()
+        updateCapoKeyPicker(capoKeysArr)
     }
     
     func updateResults(notification: NSNotification){
