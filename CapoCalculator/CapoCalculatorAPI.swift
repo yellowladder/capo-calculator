@@ -56,7 +56,7 @@ class CapoCalculatorAPI: NSObject {
         let tuning = getTuning()
         var capoKeys = [CapoKeyResult]()
         for key in getValidOpenKeys() {
-            capoKeys.append(CapoKeyResult(openKeyName: key.keyName, capoPosition: key.availableCapoKey(concertKey.keyVal, tuning: tuning)))
+            capoKeys.append(CapoKeyResult(name: key.keyName, capoPosition: key.availableTransposition(concertKey.keyVal, tuning: tuning)))
         }
         return capoKeys
     }
@@ -99,5 +99,25 @@ class CapoCalculatorAPI: NSObject {
     
     func updateTuning(updatedTuning: Int) {
         persistencyManager.updateTuning(updatedTuning)
+    }
+    
+    // MARK: Transposition
+    
+    func getTranspositionPairs(concertKey: Key, capoKey: Key) -> [Key:Key] {
+        var transPairs = [Key:Key]()
+        let keyDelta = capoKey.keyVal - concertKey.keyVal
+        let concertChords = getAllKeys()
+        for (index, chord) in concertChords.enumerate() {
+            var thisDelta = index + keyDelta
+            if (thisDelta >= 12) {
+                thisDelta = thisDelta - 12
+            }
+            else if (thisDelta < 0) {
+                thisDelta = thisDelta + 12
+            }
+            transPairs[chord] = concertChords[thisDelta]
+        }
+        
+        return transPairs
     }
 }

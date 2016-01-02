@@ -17,6 +17,7 @@
 		A33D0AE61C090B9500D89BE0 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */; };
 		A33D0AE81C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
 		A33D0AE91C0A68DE00D89BE0 /* CapoKeyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */; };
+		A38FFEBB1C3757B500D3A0E1 /* TranspositionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38FFEBA1C3757B500D3A0E1 /* TranspositionResult.swift */; };
 		A3F1A3F11C08EAA900125A4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */; };
 		A3F1A3F31C08EAA900125A4A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F1A3F21C08EAA900125A4A /* MasterViewController.swift */; };
 		A3F1A3F61C08EAA900125A4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3F1A3F41C08EAA900125A4A /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		A33D0AE11C090B0200D89BE0 /* CapoCalculatorAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoCalculatorAPI.swift; sourceTree = "<group>"; };
 		A33D0AE41C090B9500D89BE0 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapoKeyResult.swift; sourceTree = "<group>"; };
+		A38FFEBA1C3757B500D3A0E1 /* TranspositionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranspositionResult.swift; sourceTree = "<group>"; };
 		A3F1A3ED1C08EAA900125A4A /* CapoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapoCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F1A3F01C08EAA900125A4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3F1A3F21C08EAA900125A4A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				A33D0AD71C08F5DC00D89BE0 /* Key.swift */,
 				A33D0AE71C0A68DE00D89BE0 /* CapoKeyResult.swift */,
+				A38FFEBA1C3757B500D3A0E1 /* TranspositionResult.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				A3105C0F1C32409700F306EF /* SettingsViewController.swift in Sources */,
 				A33D0AE51C090B9500D89BE0 /* PersistencyManager.swift in Sources */,
 				A3F1A3F11C08EAA900125A4A /* AppDelegate.swift in Sources */,
+				A38FFEBB1C3757B500D3A0E1 /* TranspositionResult.swift in Sources */,
 				A33D0AE21C090B0200D89BE0 /* CapoCalculatorAPI.swift in Sources */,
 				A33D0AD81C08F5DC00D89BE0 /* Key.swift in Sources */,
 			);

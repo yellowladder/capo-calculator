@@ -19,5 +19,69 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CapoCalculator/CapoCalculatorAPI.swift"
+            timestampString = "473392702.727929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "getTranspositionPairs(_:capoKey:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CapoCalculator.CapoCalculatorAPI.getTranspositionPairs (CapoCalculator.CapoCalculatorAPI)(Swift.Int, capoKeyVal : Swift.Int) -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
+                  moduleName = "CapoCalculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeffbrumley/Documents/XCode/CapoCalculator/CapoCalculator/CapoCalculator/CapoCalculatorAPI.swift"
+                  timestampString = "473392588.056014"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CapoCalculatorTests.CapoCalculatorAPI.getTranspositionPairs (CapoCalculatorTests.CapoCalculatorAPI)(Swift.Int, capoKeyVal : Swift.Int) -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
+                  moduleName = "CapoCalculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeffbrumley/Documents/XCode/CapoCalculator/CapoCalculator/CapoCalculator/CapoCalculatorAPI.swift"
+                  timestampString = "473392589.044018"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CapoCalculator/CapoCalculatorAPI.swift"
+            timestampString = "473393008.808524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "getTranspositionPairs(_:capoKey:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

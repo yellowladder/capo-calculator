@@ -25,6 +25,9 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     var pickerData = [[String]]()
     
+    let defaultCapoKeyPickerRow = 0
+    var capoKeyResultArr = [CapoKeyResult]()
+    
 // MARK: Instance Methods
 
     @nonobjc
@@ -69,37 +72,57 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         tuningLabel.text = "Tuning: " + tuningStr
     }
 
-    func getCapoKeyResults() -> [String] {
+    func updateCapoKeyResultArr() {
         var capoKeys = CapoCalculatorAPI.sharedInstance.getOpenKeyValuePairs(pickedConcertKey)
         capoKeys.sortInPlace({ $0.capoPosition < $1.capoPosition})
-        var resultsArr = [String]()
-        if capoKeys.count > 0 {
-            for capoKey in capoKeys {
-                if capoKey.capoPosition == 0 {
-                    resultsArr.append("Open in " + capoKey.openKeyName + "\n")
-                }
-                else {
-                    resultsArr.append("Capo " + String(capoKey.capoPosition) + " in " + capoKey.openKeyName + "\n")
-                }
-            }
-        }
-        return resultsArr
+        capoKeyResultArr = capoKeys
     }
     
-    func updateCapoKeyPicker(capoKeysArr: [String]) {
+    func getCapoKeyResults() -> [String] {
+        var capoKeysArr = [String]()
+        if capoKeyResultArr.count > 0 {
+            for capoKey in capoKeyResultArr {
+                capoKeysArr.append(capoKey.formattedResult())
+            }
+        }
+        return capoKeysArr
+    }
+    
+    func getTranspositionResult(pickerRow: Int) -> TranspositionResult {
+        let capoKeyResult = capoKeyResultArr[pickerRow]
+        let capoKey = CapoCalculatorAPI.sharedInstance.getKeyByName(capoKeyResult.openKeyName)
+        let transResult = TranspositionResult(concertKey: pickedConcertKey, capoKey: capoKey, capoPosition: capoKeyResult.capoPosition)
+        
+        return transResult
+    }
+    
+    func updateCapoKeyPicker() {
+        updateCapoKeyResultArr()
+        let capoKeysArr = getCapoKeyResults()
         pickerData = [capoKeysArr]
-        capoKeyPicker.selectRow(0, inComponent: pickerComponent.name.rawValue, animated: false)
+        capoKeyPicker.selectRow(defaultCapoKeyPickerRow, inComponent: pickerComponent.name.rawValue, animated: false)
         capoKeyPicker.reloadAllComponents()
     }
     
-    func getAndDisplayResults() {
-        let capoKeysArr = getCapoKeyResults()
-        updateCapoKeyPicker(capoKeysArr)
-    }
     
     func updateResults(notification: NSNotification){
         setTuningFromSavedDefaults()
-        getAndDisplayResults()
+        updateCapoKeyPicker()
+        updateTranspositionTextView(defaultCapoKeyPickerRow)
+    }
+    
+    func updateTranspositionTextView(pickerRow: Int){
+        var strBuild = String()
+        
+        let transpositionResult = getTranspositionResult(pickerRow)
+        strBuild = "Transposition Guide " + transpositionResult.formattedName() + ":\n"
+        
+        let formattedPairs = transpositionResult.formattedPairs()
+        for pair in formattedPairs {
+            strBuild.appendContentsOf(pair + "\n")
+        }
+        transpositionTextView.text.removeAll()
+        transpositionTextView.text.appendContentsOf(strBuild)
     }
     
 // MARK: Lifecycle
@@ -113,7 +136,8 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 
         setTuningFromSavedDefaults()
         setPickedConcertKeyFromDefaults()
-        getAndDisplayResults()
+        updateCapoKeyPicker()
+        updateTranspositionTextView(defaultCapoKeyPickerRow)
     }
     
 
@@ -130,8 +154,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-    
+            updateTranspositionTextView(row)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -143,6 +166,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 extension DetailViewController: ConcertKeySelectionDelegate {
     func concertKeySelected(concertKey: Key) {
         setPickedConcertKey(concertKey)
-        getAndDisplayResults()
+        updateCapoKeyPicker()
+        updateTranspositionTextView(defaultCapoKeyPickerRow)
     }
 }
